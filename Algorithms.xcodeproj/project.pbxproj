@@ -13,6 +13,8 @@
 		25D989D328B0921800FAB215 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25D989D228B0921800FAB215 /* Preview Assets.xcassets */; };
 		25D989D528B0921800FAB215 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D989D428B0921800FAB215 /* Persistence.swift */; };
 		25D989D828B0921800FAB215 /* Algorithms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25D989D628B0921800FAB215 /* Algorithms.xcdatamodeld */; };
+		25D989DF28B0924A00FAB215 /* sowpods.txt in Resources */ = {isa = PBXBuildFile; fileRef = 25D989DE28B0924A00FAB215 /* sowpods.txt */; };
+		25D989E128B0929800FAB215 /* problem1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D989E028B0929800FAB215 /* problem1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,9 @@
 		25D989D228B0921800FAB215 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		25D989D428B0921800FAB215 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		25D989D728B0921800FAB215 /* Algorithms.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Algorithms.xcdatamodel; sourceTree = "<group>"; };
+		25D989DE28B0924A00FAB215 /* sowpods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sowpods.txt; path = ../../../Downloads/sowpods.txt; sourceTree = "<group>"; };
+		25D989E028B0929800FAB215 /* problem1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = problem1.swift; sourceTree = "<group>"; };
+		25D989E228B0936400FAB215 /* sowpods.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = sowpods.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +44,8 @@
 		25D989BF28B0921400FAB215 = {
 			isa = PBXGroup;
 			children = (
+				25D989E228B0936400FAB215 /* sowpods.txt */,
+				25D989E028B0929800FAB215 /* problem1.swift */,
 				25D989CA28B0921500FAB215 /* Algorithms */,
 				25D989C928B0921400FAB215 /* Products */,
 			);
@@ -58,6 +65,7 @@
 				25D989CB28B0921500FAB215 /* AlgorithmsApp.swift */,
 				25D989CD28B0921500FAB215 /* ContentView.swift */,
 				25D989CF28B0921800FAB215 /* Assets.xcassets */,
+				25D989DE28B0924A00FAB215 /* sowpods.txt */,
 				25D989D428B0921800FAB215 /* Persistence.swift */,
 				25D989D628B0921800FAB215 /* Algorithms.xcdatamodeld */,
 				25D989D128B0921800FAB215 /* Preview Content */,
@@ -133,6 +141,7 @@
 			files = (
 				25D989D328B0921800FAB215 /* Preview Assets.xcassets in Resources */,
 				25D989D028B0921800FAB215 /* Assets.xcassets in Resources */,
+				25D989DF28B0924A00FAB215 /* sowpods.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25D989D528B0921800FAB215 /* Persistence.swift in Sources */,
+				25D989E128B0929800FAB215 /* problem1.swift in Sources */,
 				25D989D828B0921800FAB215 /* Algorithms.xcdatamodeld in Sources */,
 				25D989CE28B0921500FAB215 /* ContentView.swift in Sources */,
 				25D989CC28B0921500FAB215 /* AlgorithmsApp.swift in Sources */,
