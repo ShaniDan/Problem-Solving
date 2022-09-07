@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='5.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
-    <timeline fileName='timeline.xctimeline'/>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1.WordsWithUU'/>
+        <page name='2.WordsWithXYZ'/>
+        <page name='3.WordsWithQnotU'/>
+        <page name='4.wordsWithCAT5Letters'/>
+        <page name='5wordsWithNoEA15Letters'/>
+        <page name='6.wordsWithBX5LettersLong'/>
+        <page name='7.wordsStartAndEndWithY'/>
+        <page name='8.wordsWithNoVowelAndY'/>
+        <page name='9.wordsWith5VowelsAnyOrder'/>
+        <page name='10.wordsWith5VowelsAlphabetical'/>
+        <page name='11.WordsWithTYPE'/>
+        <page name='12.WordsWithEndingGHTLY'/>
+        <page name='13.ShortestWordWith5Vowels'/>
+        <page name='14.longestWordWithNoVowels'/>
+    </pages>
 </playground>
