@@ -4,7 +4,6 @@ import UIKit
 // Input: words -> array
 // Output: words  -> words containing "X, Y, Z"
 
-
 func wordsContainingXYZ(filename:String) -> [String] {
     var allWords = [String]()
     var wordsWithXYZ = [String]()
@@ -23,6 +22,6 @@ func wordsContainingXYZ(filename:String) -> [String] {
         }
     }
     return wordsWithXYZ
-    
 }
+
 print(wordsContainingXYZ(filename: "sowpods"))
