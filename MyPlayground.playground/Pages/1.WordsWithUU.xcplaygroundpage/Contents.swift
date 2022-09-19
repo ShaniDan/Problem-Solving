@@ -5,23 +5,26 @@ import UIKit
 // Output: words  -> array of words with UU
 
 
-func wordsContainingUU(filename:String) -> [String] {
+func wordsContainingCATAndFiveLetter(filename: String) -> [String] {
     var allWords = [String]()
-    var wordsWithUU = [String]()
-    if let startWordsPath = Bundle.main.path(forResource: filename, ofType: "txt") {
-        if let startWords = try? String(contentsOfFile: startWordsPath) {
-            allWords = startWords.components(separatedBy: "\n")
+    var wordsWithCATAndFiveLetter = [String]()
+    if let filePath = Bundle.main.path(forResource: filename, ofType: "txt") {
+        if let changeContentsToString = try? String(contentsOfFile: filePath) {
+            allWords = changeContentsToString.components(separatedBy: "\n")
+          
             for word in allWords {
-                if word.contains("UU") {
-                    wordsWithUU.append(word)
+                if !word.contains("A")
+                    && !word.contains("E")
+                    && word.count <= 15 {
+                    wordsWithCATAndFiveLetter.append(word)
+                } else {
+                    allWords = ["Error"]
                 }
             }
-        } else {
-            allWords = ["Unable to convert content of the file to an array with strings"]
-            return allWords
         }
     }
-    return wordsWithUU
+    return wordsWithCATAndFiveLetter
 }
-print(wordsContainingUU(filename: "sowpods"))
+
+print(wordsContainingCATAndFiveLetter(filename: "sowpods"))
 

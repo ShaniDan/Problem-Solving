@@ -15,5 +15,8 @@
         <page name='12.WordsWithEndingGHTLY'/>
         <page name='13.ShortestWordWith5Vowels'/>
         <page name='14.longestWordWithNoVowels'/>
+        <page name='15.whichLetterQXZLeastCommon'/>
+        <page name='16.longestPalindrome'/>
+        <page name='17.'/>
     </pages>
 </playground>
