@@ -9,3 +9,14 @@ public func readTxt(name: String) -> [String] {
     }
     return words
 }
+
+public func readCsv(name: String) -> [String] {
+    var words = [String]()
+    if let path = Bundle.main.path(forResource: name, ofType: "csv") {
+        if let changeContents = try? String(contentsOfFile: path) {
+            words = changeContents.components(separatedBy: "\n")
+        }
+    }
+    return words
+}
+
