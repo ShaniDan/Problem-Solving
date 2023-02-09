@@ -13,9 +13,8 @@ func solution() -> [String] {
     for word in sowpodsWords {
         var testCase = ""
         for character in word {
-            var stringChar = String(character)
-            if rstlne.contains(stringChar) {
-                testCase.append(stringChar)
+            if rstlne.contains(String(character)) {
+                testCase.append(character)
             }
         }
         if testCase == word {

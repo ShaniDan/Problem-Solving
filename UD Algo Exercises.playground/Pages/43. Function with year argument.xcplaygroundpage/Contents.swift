@@ -2,14 +2,16 @@
 
 import Foundation
 
-func solution(_year: String) -> String {
+func solution(_ targetYear: String) -> String {
     var nbaFinals = readCsv(name: "nba_finals")
-    var result = ""
-    for winner in nbaFinals {
-        if winner.contains(_year) {
-            result.append(winner)
+    for line in nbaFinals {
+        let data = line.components(separatedBy: ",")
+        let year = data[0]
+        let winner = data[1]
+        if year == targetYear {
+            return winner
         }
     }
-    return result
+    return "No winner for that year"
 }
-print(solution(_year: "2010"))
+print(solution("2005"))

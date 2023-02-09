@@ -5,12 +5,15 @@ import Foundation
 func solution(teamName: String) -> [String] {
     var nbaFinals = readCsv(name: "nba_finals")
     var result = [String]()
-    
-    for teams in nbaFinals {
-        if teams.contains(teamName) {
-            result.append(teams)
+    for line in nbaFinals {
+        let commaData = line.components(separatedBy: ",")
+        let year = commaData[0]
+        let winner = commaData[1]
+        if winner == teamName {
+            result.append(year)
         }
     }
     return result
 }
-print(solution(teamName: "Los Angeles Lakers"))
+print(solution(teamName: "San Antonio Spurs"))
+    

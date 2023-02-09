@@ -2,7 +2,7 @@
 
 import Foundation
 
-func solution(_ string: String) -> [String] {
+func solution(string: String) -> [String] {
     var sowpodsWords = readTxt(name: "sowpods")
     var result = [String]()
     for word in sowpodsWords {
@@ -12,5 +12,4 @@ func solution(_ string: String) -> [String] {
     }
     return result
 }
-print(solution("UU"))
-
+print(solution(string: "UU"))

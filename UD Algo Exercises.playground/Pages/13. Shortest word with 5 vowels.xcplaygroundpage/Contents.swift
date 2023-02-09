@@ -16,7 +16,9 @@ func solution() -> Any {
             results.append(word)
         }
     }
-    return results.min()!
+    let sortedResults = results.sorted {$0.count < $1.count}
+    let shortest = sortedResults.first!.count
+    return sortedResults.filter{$0.count == shortest}
 }
 print(solution())
 

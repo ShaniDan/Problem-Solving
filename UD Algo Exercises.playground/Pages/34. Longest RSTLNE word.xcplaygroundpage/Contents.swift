@@ -17,12 +17,50 @@ func solution() -> [String] {
             } 
         }
         if containsRSTLNE {
+            if rstlneWords.isEmpty {
+                rstlneWords = [word]
+            } else if rstlneWords[0].count < word.count {
+                rstlneWords = [word]
+            } else if rstlneWords[0].count == word.count {
+                rstlneWords.append(word)
+            }
+        }
+    }
+//    if let longestRstlne = rstlneWords.max(by: {$1.count > $0.count}) {
+//        result.append(longestRstlne)
+//    }
+    return rstlneWords
+}
+print(solution())
+
+func solution2() -> [String] {
+    var sowpodsWords = readTxt(name: "sowpods")
+    var result = [String]()
+    var rstlne: Set<Character> = ["R", "S", "T", "L", "N", "E"]
+    var rstlneWords = [String]()
+    
+    for word in sowpodsWords {
+        var containsRSTLNE = true
+        for character in word {
+            if !rstlne.contains(character) {
+                containsRSTLNE = false
+                break
+            }
+        }
+        if containsRSTLNE {
             rstlneWords.append(word)
         }
     }
-    if let longestRstlne = rstlneWords.max(by: {$1.count > $0.count}) {
-        result.append(longestRstlne)
+    for word in rstlneWords {
+        if result.isEmpty {
+            result = [word]
+        } else if result[0].count < word.count {
+            result = [word]
+        } else if result[0].count == word.count {
+            result.append(word)
+        }
     }
     return result
 }
-print(solution())
+
+print(solution2())

@@ -6,10 +6,14 @@ func solution(_ prefix: String) -> [String] {
     var sowpodsWords = readTxt(name: "sowpods")
     var result = [String]()
     for word in sowpodsWords {
-//   guard word.hasPrefix(prefix) else {return result}
-        if word.hasPrefix(prefix) {
-            result.append(word)
-        }
+        guard word.hasPrefix(prefix) else { continue }
+        result.append(word)
+//        if word.hasPrefix(prefix) {
+//            result.append(word)
+//        } else {
+//            continue
+//        }
+        print("Found a word with \(prefix): \(word)")
     }
     return result
 }
