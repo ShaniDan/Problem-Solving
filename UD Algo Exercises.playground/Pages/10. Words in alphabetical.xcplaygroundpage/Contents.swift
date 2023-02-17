@@ -13,6 +13,7 @@ func solution() -> [String] {
             var stringChar = String(character)
             if vowels.contains(stringChar) {
                 testCase.append(stringChar)
+                print(testCase)
             }
         }
         if testCase == vowels {
