@@ -10,7 +10,6 @@ func solution() -> Optional<(key: String, value: Int)> {
         var distributor = arrayLine[1].trimmingCharacters(in: .whitespacesAndNewlines)
         dictDistributor [distributor, default: 0] += 1
     }
-    print(dictDistributor)
     let result = dictDistributor.max { $0.value < $1.value }
     return result
 }
