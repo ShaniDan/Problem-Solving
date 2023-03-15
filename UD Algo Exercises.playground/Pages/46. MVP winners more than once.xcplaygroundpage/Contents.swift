@@ -7,40 +7,48 @@
 import Foundation
 
 func solution() -> [String] {
-    var nbaFinals = readCsv(name: "nba_finals").dropFirst()
+    
+    /* MARK: Step 1:
+     1. Parsing CSV and declaring empty variables */
+    
+    var nbaFinalsStrings = readCsv(name: "nba_finals").dropFirst()
+    let nbaFinal = nbaFinalsStrings.map { Game(line: parseCSV(line: $0.trimmingCharacters(in: .newlines))) }
     var result = [String]()
     var mvps: [String: Int] = [:]
-    // Figure out the counts
-    for line in nbaFinals {
-        let lineComponents = line.components(separatedBy: ",")
-        var mvp = lineComponents[4].trimmingCharacters(in: .whitespacesAndNewlines)
-        mvps[mvp, default: 0] += 1
-        
+    
+    /* MARK: Step 2:
+     1. Figure out the counts */
+    
+    for game in nbaFinal where !game.mvp.isEmpty {
+        mvps[game.mvp, default: 0] += 1
+//        print(mvps)
     }
     
-    // Arrange the mvps by count
-    // Add intermediate dictionary [Count: [MVP]]
+    /* MARK: Step 3:
+     1. Arrange the mvps by count
+     2. Add intermediate dictionary [Count: [MVP]]
+     3. Loop through mvps
+     4. for each count greater than 1, append the mvp to the dictionary[count] */
+    
     var countMvps: [Int: [String]] = [:]
-    // Loop through mvps
     for (mvp, count) in mvps {
-        // for each count greater than 1, append the mvp to the dictionary[count]
-        if count > 1 && !mvp.isEmpty {
-            countMvps[count, default: []].append(mvp)
+        if count > 1 {
+            countMvps[count, default: [String]()].append(mvp)
         }
     }
-
-    // Format the counts - mvps in the way the question asked for
-    // Sort dictionary by count
-    // Loop through sorted dictionary
+    /* MARK: Step 4:
+     1. Format the counts - mvps in the way the question asked for
+     2. Sort dictionary by count
+     3. Loop through sorted dictionary
+     4. Join mvp array with commas
+     5. Add that to a string "X time: "
+     6. Append the whole thing to the result array*/
+    
     for (count, mvpArray) in countMvps.sorted(by: { $0.key > $1.key }) {
-        // join mvp array with commas
         let mvpList = mvpArray.joined(separator: ", ")
-        // add that to a string "X time: "
         let line = "- \(count) times: \(mvpList)"
-        // append the whole thing to the result array
         result.append(line)
     }
-    
     return result
 }
 print(solution().joined(separator: "\n"))

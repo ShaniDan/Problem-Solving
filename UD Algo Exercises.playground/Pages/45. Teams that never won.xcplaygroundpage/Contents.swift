@@ -14,6 +14,7 @@ func solution() -> [String] {
         let lineCsv = line.components(separatedBy: ",")
         let winner = lineCsv[1]
         winnersList.append(winner)
+        print(winnersList)
     }
     
     for line in nbaFinals {

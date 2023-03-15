@@ -10,6 +10,7 @@ func countriesGreaterThan50PercentVowels() -> [String] {
     
     for country in allCountries {
         let uppercasedCountry = country.uppercased()
+        
         var vowelsCount = 0
         for char in uppercasedCountry {
             var character = String(char)

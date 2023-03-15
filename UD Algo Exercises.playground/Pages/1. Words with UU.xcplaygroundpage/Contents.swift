@@ -5,7 +5,7 @@ import Foundation
 func solution () -> [String] {
     var word = readTxt(name: "sowpods")
     
-    let result = word.filter {word in word.contains("UU")}
+    let result = word.filter {$0.contains("UU")}
     return result
 }
 print(solution())
