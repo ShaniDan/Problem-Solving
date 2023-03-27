@@ -90,14 +90,14 @@ public struct Movie {
 
 // MARK: struct with line "methods"? for BILLBOARD csv file
 
-public struct Songs {
+public struct Songs: Hashable {
     public let rank: Int
     public let song: String
     public let artist: String
     public let lastWeek: Int
     public let peakRank: Int
     public let weeksOnBoard: Int
-    public let date: Int
+    public let date: String
     
     public init(line: [String]) {
         self.rank = Int(line[0]) ?? -1
@@ -106,7 +106,17 @@ public struct Songs {
         self.lastWeek = Int(line[3]) ?? -1
         self.peakRank = Int(line[4]) ?? -1
         self.weeksOnBoard = Int(line[5]) ?? -1
-        self.date = Int(line[6]) ?? -1
+        self.date = line[6]
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(song)
+        hasher.combine(artist)
+    }
+    // Hashable and Equatable
+    // lhs, rhs left and right hand sight
+    public static func ==(lhs: Songs, rhs: Songs) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }
 

@@ -4,7 +4,6 @@ import Foundation
 
 func solution() -> [String] {
     var sowpodsWords = readTxt(name: "sowpods")
-    var result = [String]()
     var rstlne: Set<Character> = ["R", "S", "T", "L", "N", "E"]
     var rstlneWords = [String]()
     
@@ -26,9 +25,6 @@ func solution() -> [String] {
             }
         }
     }
-//    if let longestRstlne = rstlneWords.max(by: {$1.count > $0.count}) {
-//        result.append(longestRstlne)
-//    }
     return rstlneWords
 }
 print(solution())
