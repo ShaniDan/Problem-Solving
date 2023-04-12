@@ -2,14 +2,6 @@
 
 import Foundation
 
-//func solution() -> [String] {
-//    var sowpodsWords = readTxt(name: "sowpods")
-//    var result = sowpodsWords.filter {$0.count == 8}
-//
-//    return result
-//}
-//print(solution())
-
 func solution() -> [String] {
     var sowpodsWords = readTxt(name: "sowpods")
     var result = [String]()
@@ -21,7 +13,7 @@ func solution() -> [String] {
         if uniqueLetters.count <= 3 && word.count >= 8 {
             result.append(word)
         }
-        print(uniqueLetters)
+//        print(uniqueLetters)
     }
     return result
 }
