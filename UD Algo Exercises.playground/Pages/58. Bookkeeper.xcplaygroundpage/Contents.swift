@@ -11,11 +11,16 @@ func solution() -> [String] {
         for (index, _) in word.enumerated() {
             
             // MARK: getting the index of the String. Is there any other way?
+            
             let indexZ = word.index(word.startIndex, offsetBy: index)
+            print(indexZ)
             if index != 0 {
                 let indexY = word.index(word.startIndex, offsetBy: index - 1)
+            
                 let character = word[indexZ]
+               
                 let prevCharacter = word[indexY]
+               
                 if character == prevCharacter {
                     count += 1
                 }

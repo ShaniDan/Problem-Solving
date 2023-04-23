@@ -28,16 +28,7 @@ func solution () -> String {
 //    print(sortMostSongArtist)
 //    print(maxMostSongArtist)
     guard let artistWithMostSongs = songsPerArtist.max(by: { $0.value.count < $1.value.count }) else { return "No Result" }
-    result = "\(artistWithMostSongs.key): \(artistWithMostSongs.value)"
-//    for line in billBoardSongs {
-//        if line.artist == "Destiny's Child" {
-//            artistAndSong[line.song] = line.artist
-//        }
-//    }
-//    for (song, artist) in artistAndSong {
-//        result.append("\"\(song)\" - \(artist), ")
-//    }
-    
+    result = "\(artistWithMostSongs.key): \(artistWithMostSongs.value)"    
     return result
 }
 print(solution())

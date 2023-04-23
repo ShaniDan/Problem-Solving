@@ -2,7 +2,7 @@
 //
 // How can I find the matching letters to availableLetters in a word?
 // Separate characters in a word with commas to be able to match them with availableLetters
-//  Iterate over words in separatedWords
+// Iterate over words in separatedWords
 // Iterate over characters in a word
 // Match the characters in a word to the letters in availableLetters
 
@@ -15,13 +15,9 @@ func solution(availableLetters: String) -> [String] {
            let commaWord = string.map { String($0) }
            return commaWord.joined(separator: ", ")
         }
-//    print(separatedWrods)
-    for word in separatedWrods {
-       for char in word {
-           if availableLetters == String(char) {
-               result.append(word)
-           }
-        }
+    print(separatedWrods)
+    for (index, _) in separatedWrods.enumerated() {
+       
     }
     return result
 }
