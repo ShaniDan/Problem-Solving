@@ -8,12 +8,13 @@ func solution() -> [String] {
     
     for word in sowpodWords {
         var count = 0
+        
         for (index, _) in word.enumerated() {
             
             // MARK: getting the index of the String. Is there any other way?
             
             let indexZ = word.index(word.startIndex, offsetBy: index)
-            print(indexZ)
+//            print(indexZ)
             if index != 0 {
                 let indexY = word.index(word.startIndex, offsetBy: index - 1)
             
