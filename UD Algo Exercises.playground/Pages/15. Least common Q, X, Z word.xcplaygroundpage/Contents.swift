@@ -21,7 +21,6 @@ func solution() -> Any {
         }
     }
     print(qxz)
-    //
     return qxz.min{$0.value < $1.value}!
 }
 print(solution())

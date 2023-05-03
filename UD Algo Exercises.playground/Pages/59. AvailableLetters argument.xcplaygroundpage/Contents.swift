@@ -19,7 +19,7 @@ func solution(availableLetters: String) -> [String] {
     
     // Loop through sowpod words
     outerLoop: for word in sowpodWords {
-//        if setOfAvailable.isSuperset(of: word) { result.append(word) }
+        if setOfAvailable.isSuperset(of: word) { result.append(word) }
         // Loop through letters in word
         for letter in word {
             // Check if the letter is contained in the set
