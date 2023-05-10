@@ -9,7 +9,7 @@ public func readTxt(name: String) -> [String] {
             words = changeContents.components(separatedBy: "\n")
         }
     }
-    return words
+    return words.filter { !$0.isEmpty }
 }
 
 // MARK: public func to read CSV files

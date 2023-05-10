@@ -1,39 +1,56 @@
-// Array.enumerated
-
 import Foundation
-var array = [3, 5, 4, 8, 6, 9]
-var dict = [Int: Int]()
 
-let minarray = array.max()
-print(minarray)
+//func solution() -> [String] {
+//    var sowpodWords = readTxt(name: "sowpods")
+//    var result = [String]()
+//
+//    for word in 0..<sowpodWords.count - 1 {
+//        let currentWord = sowpodWords[word]
+//        let nextWord = sowpodWords[word + 1]
+//        if currentWord == nextWord {
+//            result.append(String(word))
+//        }
+//    }
+//    return result
+//}
+//print(solution())
 
-// Initializers
 
-class Person {
+//let words: [String] = ["apple", "banana", "cherry", "date"]
+//for i in 0..<words.count - 1 {
+//    let currentWord = words[i]
+//    let nextWord = words[i + 1]
+//    if currentWord == nextWord {
+//        print("\(currentWord) is the same as \(nextWord)")
+//    } else {
+//        print("\(currentWord) is different from \(nextWord)")
+//    }
+//}
 
-// "name" is a property. In this class Person we have a "name" property
-    var name = "None"
-    
+
+//let words: [String] = ["apple", "banana", "bookkeeper", "cheese", "coffee", "success"]
+//for word in words {
+//    var hasOnlyDoubleChars = true
+//    for (char1, char2) in zip(word, word.dropFirst()) {
+//        if char1 != char2 || !char1.isLetter || !char2.isLetter || word.filter({ $0 == char1 }).count != 2 {
+//            hasOnlyDoubleChars = false
+//            break
+//        }
+//    }
+//    if hasOnlyDoubleChars {
+//        print("\(word) contains only double characters")
+//    }
+//    guard word.count > 1 else {
+//        hasOnlyDoubleChars = false
+//        break
+//    }
+//}
+
+let array = ["APPLE", "GLASS"]
+let result = array.map { string in
+    let charArray = string.map { String($0) }
+    return charArray.joined(separator: ", ")
 }
-
-// Person object
-
-Person()
-
-// the purpose of initializer is that the object is set-up and ready to go
+print(result)
 
 
-let names = ["Alice", "Bob", "Charlie", "David"]
-var nameCounts: [String: Int] = [:]
-
-for name in names {
-    if let count = nameCounts[name] {
-        // If the name is already in the dictionary, increment the count
-        nameCounts.updateValue(count + 1, forKey: name)
-    } else {
-        // If the name is not in the dictionary, add it with a count of 1
-        nameCounts.updateValue(1, forKey: name)
-    }
-}
-
-print(nameCounts)

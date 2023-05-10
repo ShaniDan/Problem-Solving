@@ -38,5 +38,8 @@ let setB: Set<Int> = [3, 4, 5, 6]
 let intersection = setA.intersection(setB) // [3, 4]
 let union = setA.union(setB) // [1, 2, 3, 4, 5, 6]
 let difference = setA.subtracting(setB) // [1, 2]
+setA.isDisjoint(with: setB) // false
+setA.isSubset(of: setB) // false
+setA.isSubset(of: union) // true
 
 // MARK: In addition, you can also use various other set operations and properties like isSubset(of:), isSuperset(of:), isEmpty, and count.
