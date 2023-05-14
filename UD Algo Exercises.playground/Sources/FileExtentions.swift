@@ -15,13 +15,13 @@ public func readTxt(name: String) -> [String] {
 // MARK: public func to read CSV files
 
 public func readCsv(name: String) -> [String] {
-    var words = [String]()
+    var lines = [String]()
     if let path = Bundle.main.path(forResource: name, ofType: "csv") {
         if let changeContents = try? String(contentsOfFile: path) {
-            words = changeContents.components(separatedBy: "\n")
+            lines = changeContents.components(separatedBy: "\n")
         }
     }
-    return words
+    return lines
 }
 
 // MARK: public function to PARSE CSV files
@@ -118,6 +118,25 @@ public struct Songs: Hashable {
     public static func ==(lhs: Songs, rhs: Songs) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
+}
+
+public struct Animal {
+    public let animalName: String
+    public let animalType: String
+    public let numLegs: Int
+    public let sound: String
+    
+    public init(line: [String]) {
+        self.animalName = line[0]
+        self.animalType = line[1]
+        self.numLegs = Int(line[2]) ?? -1
+        self.sound = line[3]
+    }
+}
+
+public struct Monster {
+
+
 }
 
 
