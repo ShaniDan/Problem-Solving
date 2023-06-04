@@ -14,11 +14,6 @@ func solution() -> [String] {
         if setScrabbleWords.contains(String(reversedName)) {
             results.append(babyName)
         }
-//        for word in scrabbleWords {
-//            if word == String(reversedName) {
-//                results.append(babyName)
-//            }
-//        }
     }
     return results
 }

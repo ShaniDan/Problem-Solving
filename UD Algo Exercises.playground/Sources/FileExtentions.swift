@@ -136,7 +136,20 @@ public struct Animal {
 
 public struct Monster {
 
+    public let head: Animal
+    public let body: Animal
+    public let name: String
+    public let numLegs: Int
+    public let sound: String
 
+    public init?(head: Animal, body: Animal) {
+        guard head.numLegs == body.numLegs else { return nil }
+        self.head = head
+        self.body = body
+        self.name = "\(head.animalName)\(body.animalName)"
+        self.sound = "\(head.sound)\(body.sound)"
+        self.numLegs = head.numLegs
+    }
 }
 
 

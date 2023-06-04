@@ -42,19 +42,36 @@ var greeting = "Hello, playground"
      - This function should call your `createAllMonsters` function
  */
 
-func createAllMonsters() -> [String] {
-    var animalString = readCsv(name: "animals")
-    var animalName = animalString.map {
-        Animal(line: parseCSV(line: $0))
+extension Monster: CustomStringConvertible {
+    public var description: String {
+        "Monster(name: \(name), sound:\(sound))"
     }
-    var monsters = [String]()
+}
+
+func createAllMonsters() -> [Monster] {
+    var animalString = readCsv(name: "animals")
+    var animals = animalString.dropFirst().map {
+        Animal(line: parseCSV(line: $0).map {
+            $0.trimmingCharacters(in: .whitespacesAndNewlines)
+        })
+    }
+    var monsters = [Monster]()
     
-    for line in animalName {
-        if line.numLegs == 8 {
-            monsters.append(line.animalName)
+    for animal1 in animals {
+        for animal2 in animals {
+            if animal1.animalName != animal2.animalName,
+               let monster = Monster(head: animal1, body: animal2) {
+                monsters.append(monster)
+            }
         }
+//        if animal1.numLegs == 8 {
+//            monsters.append(animal1.animalName)
+//        }
     }
     
     return monsters
 }
-print(createAllMonsters())
+let monsters = createAllMonsters()
+for monster in monsters {
+    print(monster)
+}

@@ -14,6 +14,12 @@ func solution() -> [String] {
     }
     let sortedResults = result.sorted {$0.count < $1.count}
     let shortest = sortedResults.first!.count
-    return sortedResults.filter{$0.count == shortest}
+    for word1 in sortedResults {
+        if word1.count == shortest {
+            result.append(word1)
+        }
+    }
+    return result
+    // sortedResults.filter{$0.count == shortest}
 }
 print(solution())
