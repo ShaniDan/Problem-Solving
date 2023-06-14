@@ -18,6 +18,7 @@ func solution() -> [String] {
         if containsRSTLNE {
             if rstlneWords.isEmpty {
                 rstlneWords = [word]
+                print(word)
             } else if rstlneWords[0].count < word.count {
                 rstlneWords = [word]
             } else if rstlneWords[0].count == word.count {

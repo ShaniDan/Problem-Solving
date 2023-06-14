@@ -12,7 +12,13 @@ Example
 - Result: `[16, 9, 11]` */
 
 import Foundation
-func KlargestElement(array: [Int], K: Int) -> Int {
-    
+func KlargestElement(array: [Int], K: Int) -> [Int] {
+    var result = [Int]()
+    for i in array {
+        if i > K {
+            result.append(i)
+        }
+    }
+    return result
 }
-print(k)
+print(KlargestElement(array: [5, 16, 7, 9, -1, 4, 3, 11, 2], K: 3))
