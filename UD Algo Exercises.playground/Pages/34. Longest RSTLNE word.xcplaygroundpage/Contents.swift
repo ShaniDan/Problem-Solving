@@ -5,7 +5,7 @@ import Foundation
 func solution() -> [String] {
     var sowpodsWords = readTxt(name: "sowpods")
     var rstlne: Set<Character> = ["R", "S", "T", "L", "N", "E"]
-    var rstlneWords = [String]()
+    var rstlneWords = [String]() // var rstlneWords = [SENSELESSNESSES]()
     
     for word in sowpodsWords {
         var containsRSTLNE = true
@@ -15,12 +15,13 @@ func solution() -> [String] {
                 break
             } 
         }
-        if containsRSTLNE {
+        if containsRSTLNE { // EE = true = rstlne contains the letter "E"
             if rstlneWords.isEmpty {
                 rstlneWords = [word]
                 print(word)
             } else if rstlneWords[0].count < word.count {
                 rstlneWords = [word]
+                print(word)
             } else if rstlneWords[0].count == word.count {
                 rstlneWords.append(word)
             }
