@@ -13,3 +13,14 @@ func solution(_ string: String) -> Int {
     return result
 }
 print(solution("AAaHING"))
+
+func solution2(_ string2: String) -> Int {
+    var result = [Character]()
+    for letter in string2 {
+        if letter == "A" {
+            result.append(letter)
+        }
+    }
+    return result.count
+}
+print(solution2("APPLE"))

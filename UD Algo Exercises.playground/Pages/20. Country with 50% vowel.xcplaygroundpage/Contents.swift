@@ -22,6 +22,7 @@ func countriesGreaterThan50PercentVowels() -> [String] {
                 vowelsCount += 1
             }
         }
+        
         if country.count / 2 < vowelsCount {
             countryNamesGreaterThan50PerVowels.append(country)
         }
