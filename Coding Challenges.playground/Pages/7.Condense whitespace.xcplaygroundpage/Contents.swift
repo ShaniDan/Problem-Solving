@@ -6,11 +6,33 @@
  • The string “a[space][space][space]b[space][space][space]c” should return “a[space]b[space]c”.
  • The string “[space][space][space][space]a” should return “[space]a”.
  • The string “abc” should return “abc”.
-
  */
 
 import Foundation
 
-var greeting = "Hello, playground"
+func challenge7a(input: String) -> String {
+    var result = ""
+    var seenSpace = false
+    for character in input {
+        //check if seenSpace is true
+        if character == " " {
+            if seenSpace { continue }
+            seenSpace = true
+        } else {
+            seenSpace = false
+        }
+        result.append(character)
+    }
+    return result
+}
+print(challenge7a(input: "a   b   c"))
 
-//: [Next](@next)
+func challenge7b(input: String) -> String {
+   return input.replacingOccurrences(of: " +", with: " ",
+options: .regularExpression, range: nil)
+}
+
+print(challenge7a(input: "a   b   c"))
+
+
+
