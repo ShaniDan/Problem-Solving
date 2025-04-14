@@ -1,11 +1,18 @@
 import Foundation
 
 // MARK: public function to read TXT files
+// pass argument String
+
+// This functions cleans up the txt file and reads it correctly
 
 public func readTxt(name: String) -> [String] {
+    
     var words = [String]()
+    //
     if let path = Bundle.main.path(forResource: name, ofType: "txt") {
+        
         if let changeContents = try? String(contentsOfFile: path) {
+            // \n - new line
             words = changeContents.components(separatedBy: "\n")
         }
     }
@@ -16,6 +23,7 @@ public func readTxt(name: String) -> [String] {
 
 public func readCsv(name: String) -> [String] {
     var lines = [String]()
+    
     if let path = Bundle.main.path(forResource: name, ofType: "csv") {
         if let changeContents = try? String(contentsOfFile: path) {
             lines = changeContents.components(separatedBy: "\n")
